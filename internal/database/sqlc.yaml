@@ -1,0 +1,110 @@
+version: "2"
+overrides:
+  go:
+    overrides:
+      - db_type: "bigserial"
+        go_type: "uint64"
+      - db_type: "pg_catalog.bigint"
+        go_type: "int"
+      - db_type: "pg_catalog.serial"
+        go_type: "int"
+      - db_type: "serial"
+        go_type: "int"
+      - db_type: "serial4"
+        go_type: "int"
+      - db_type: "jsonb"
+        go_type: 
+          type: "RawMessage"
+          import: "encoding/json"
+      - db_type: "serial"
+        nullable: true
+        go_type: 
+          type: "int"
+          pointer: true
+      - db_type: "date"
+        go_type: "time.Time"
+      - db_type: "pg_catalog.integer"
+        go_type: "int"
+      - db_type: "pg_catalog.integer"
+        go_type: "int"
+      - db_type: "pg_catalog.integer"
+        nullable: true
+        go_type:
+          type: "int"
+          pointer: true
+      - db_type: "int4"
+        go_type: "int"
+      - db_type: "pg_catalog.int4"
+        go_type: "int"
+      - db_type: "int4"
+        nullable: true
+        go_type: 
+          type: "int"
+          pointer: true
+      - db_type: "pg_catalog.int8"
+        go_type: "int"
+      - db_type: "pg_catalog.text"
+        go_type: "string"
+      - db_type: "text"
+        go_type: "string"
+      - db_type: "text"
+        nullable: true
+        go_type: 
+          type: "string"
+          pointer: true
+      - db_type: "bool"
+        nullable: true
+        go_type: "bool"
+      - db_type: "pg_catalog.varchar"
+        go_type: "string"
+      - db_type: "pg_catalog.varchar"
+        nullable: true
+        go_type: 
+          type: "string"
+          pointer: true
+      - db_type: "pg_catalog.interval"
+        go_type: "time.Duration"
+      - db_type: "pg_catalog.interval"
+        nullable: true
+        go_type: 
+          type: "time.Duration"
+          pointer: true
+      - db_type: "pg_catalog.text"
+        nullable: true
+        go_type: 
+          type: "string"
+          pointer: true
+      - db_type: "pg_catalog.timestamptz"
+        nullable: true
+        go_type:
+          type: "time.Time"
+          pointer: true
+      - db_type: "pg_catalog.timestamptz"
+        nullable: false
+        go_type:
+          type: "time.Time"
+          pointer: false
+      - db_type: "pg_catalog.timestamp"
+        nullable: true
+        go_type:
+          type: "time.Time"
+          pointer: true
+      - db_type: "pg_catalog.timestamp"
+        nullable: false
+        go_type:
+          type: "time.Time"
+          pointer: false
+
+
+sql:
+  - engine: "postgresql"
+    queries: "queries.sql"
+    schema: "../schema/tg.sql"
+    gen:
+      go:
+        package: "gen"
+        out: "gen"
+        sql_package: "pgx/v5"
+        emit_json_tags: true
+        emit_interface: true
+        emit_empty_slices: true

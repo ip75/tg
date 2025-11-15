@@ -1,0 +1,113 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "TG service (start)",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/cmd/tg",
+            "args": [
+                "--config",
+                ".tg.yaml",
+                "start"
+            ]
+        },
+        {
+            "name": "TG topics list",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/cmd/tg",
+            "args": [
+                "--config",
+                ".tg.yaml",
+                "--log",
+                "tg.log",
+                "topics",
+                "list"
+            ]
+        },
+        {
+            "name": "TG topics update",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/cmd/tg",
+            "args": [
+                "--config",
+                ".tg.yaml",
+                "topics",
+                "update"
+            ]
+        },
+        {
+            "name": "TG populate with tagID",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/cmd/tg",
+            "args": [
+                "--config",
+                ".tg.yaml",
+                "populate",
+                "--since",
+                "2005-01-01",
+                "--tagid",
+                "2844"
+            ]
+        },
+        {
+            "name": "TG populate all",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/cmd/tg",
+            "args": [
+                "--config",
+                ".tg.yaml",
+                "populate",
+                "--since",
+                "2005-01-01"
+            ]
+        },
+        {
+            "name": "TG BIG upload one audio",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/cmd/tg",
+            "args": [
+                "--config",
+                ".tg.yaml",
+                "upload",
+                "--path",
+                "./2018.06.23 - Алматы. БГ.3.27. Ложное эго, стресс и позиция наблюдателя.mp3"
+            ]
+        },
+        {
+            "name": "TG upload one audio",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/cmd/tg",
+            "args": [
+                "--config",
+                ".tg.yaml",
+                "upload",
+                "--path",
+                "./ШП, чем вы отличаетесь от буддистов.mp3"
+            ]
+        }
+    ]
+}

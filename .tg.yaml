@@ -1,0 +1,27 @@
+version: 1
+database:
+  # postgresql://[user[:password]@][netloc][:port][/dbname][?param1=value1&...]
+
+telegram:
+  bot_token: 1234567890:AAAAAAAAAAAAAAAAAAAAA_BBBBBBBBBBBBB
+  app_id: 12345678
+  app_hash: b00tb00tb00tb00tb00tb00tb00tb00t
+  group_id: -1001234567890
+  mtproto_group_id: 1234567890
+  access_hash: -1234567890123456789
+  upload_threads: 2 # number of threads that will upload media to telegram
+  rate_limit: 1000 # millisecons between rpc requests to telegram DC
+
+storage:
+  audio: /crate/audio
+
+server:
+  # recent_upload_time: 2025-08-01 10:00:00
+  chunk_size: 30
+  # cron update interval: seconds
+  update_interval: 15
+  jobs: 2
+  performer: Reader of classes
+  loglevel: info
+  # loglevel: debug
+  # loglevel: error
